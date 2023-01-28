@@ -1,38 +1,76 @@
 package Main;
 
-import lombok.NoArgsConstructor;
-
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.OpenOption;
 import java.nio.file.Path;
+import java.util.Random;
 import java.util.Scanner;
-import java.util.random.RandomGenerator;
 
 public class Main {
 
     // TODO: to move the scanner outside 26/01/2023
-    Main() throws FileNotFoundException {
+
+    Scanner in = new Scanner(System.in);
+
+    Main() throws IOException {
         System.out.println("Please choose 1 for encrypt or  2 for decrypt:");
-        Scanner in = new Scanner(System.in);
         String type = in.nextLine();
         type = verifyIfEncryptOrDecrypt(in , type);
         System.out.println("Please enter the path:");
         String path = in.next();
         path = verifyIfPathValid(in , path);
+        Random rand = new Random();
+        int key;
         File file = new File(path);
-        System.out.println("displaying data from file");
-        displayDataFromFile(file);
-//        Random rand = new Random();
-//        int key = rand.nextInt(25);
-//        switch(type) {
-//            case "encryptor":
-//                System.out.println("The random key is: " + key);
-//
-//                break;
-//            case "decryptor":
-//                break;
-//        }
+        switch(type) {
+            case "1":
+                key = rand.nextInt(25);
+                System.out.println("The random key is: " + key);
+                encryptToFile(file , key);
+
+                break;
+            case "2":
+                break;
+        }
+
+        in.close();
+    }
+
+    public File createNewFile(String fileName , String path) {
+        File newFile = new File(path , fileName);
+        try {
+            if(newFile.createNewFile()) {
+                System.out.println("File created");
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch(IOException e) {
+            System.out.println("error : ");
+            e.printStackTrace();
+        }
+        return newFile;
+    }
+
+    public void encryptToFile(File file , int key) throws IOException {
+        Scanner scanFile = new Scanner(file);
+        StringBuilder dataAfterEncryption = new StringBuilder();
+        File destFile = createNewFile(file.getName().concat(".encrypted") , file.getParent());
+        for(char character : scanFile.toString().toCharArray()) {
+            if(character != ' ') {
+                int originalAlphabetPosition = character - 'a';
+                int newAlphabetPosition = (originalAlphabetPosition + key) % 26;
+                char newCharacter = (char) ('a' + newAlphabetPosition);
+                dataAfterEncryption.append(newCharacter);
+            } else {
+                dataAfterEncryption.append(character);
+            }
+        }
+        scanFile.close();
+        Files.writeString(Path.of(destFile.getPath()) , dataAfterEncryption , StandardCharsets.UTF_8);
     }
 
     public boolean isPathRight(String path) {
@@ -40,13 +78,6 @@ public class Main {
         return Files.exists(path1) && ! Files.isDirectory(path1);
     }
 
-    // TODO: displayDataFromFile doesn't needed to display to console and to change it to write to a file 26/01/2023
-    public void displayDataFromFile(File file) throws FileNotFoundException {
-        Scanner sc = new Scanner(file);
-        sc.useDelimiter("\\Z");
-        System.out.println(sc.next());
-
-    }
 
     public String verifyIfEncryptOrDecrypt(Scanner scanner , String data) {
         do {
@@ -71,7 +102,7 @@ public class Main {
         return path;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         Main a = new Main();
     }
 }
