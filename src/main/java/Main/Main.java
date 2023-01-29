@@ -1,11 +1,9 @@
 package Main;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.util.Random;
 import java.util.Scanner;
@@ -59,18 +57,42 @@ public class Main {
         Scanner scanFile = new Scanner(file);
         StringBuilder dataAfterEncryption = new StringBuilder();
         File destFile = createNewFile(file.getName().concat(".encrypted") , file.getParent());
-        for(char character : scanFile.toString().toCharArray()) {
-            if(character != ' ') {
-                int originalAlphabetPosition = character - 'a';
-                int newAlphabetPosition = (originalAlphabetPosition + key) % 26;
-                char newCharacter = (char) ('a' + newAlphabetPosition);
-                dataAfterEncryption.append(newCharacter);
-            } else {
-                dataAfterEncryption.append(character);
-            }
+        String data = Files.readAllLines(file.toPath()).toString();
+        for(char character : data.toCharArray()) {
+            dataAfterEncryption.append(replaceCharWithKeyEncrypt(character , key));
         }
+        dataAfterEncryption.deleteCharAt(dataAfterEncryption.length() - 1);
+        dataAfterEncryption.deleteCharAt(0);
         scanFile.close();
         Files.writeString(Path.of(destFile.getPath()) , dataAfterEncryption , StandardCharsets.UTF_8);
+    }
+
+    public char replaceCharWithKeyEncrypt(char ch , int key) {
+        if((int) ch >= 65 && (int) ch <= 90) {
+            int originalAlphabetPosition = ch - 'A';
+            int newAlphabetPosition = (originalAlphabetPosition + key) % 26;
+            return (char) ('A' + newAlphabetPosition);
+        }
+        if((int) ch >= 97 && (int) ch <= 122) {
+            int originalAlphabetPosition = ch - 'a';
+            int newAlphabetPosition = (originalAlphabetPosition + key) % 26;
+            return (char) ('a' + newAlphabetPosition);
+        }
+        return ch;
+    }
+
+    public char replaceCharWithKeyDecrypt(char ch , int key) {
+        if((int) ch >= 65 && (int) ch <= 90) {
+            int originalAlphabetPosition = ch - 'A';
+            int newAlphabetPosition = (originalAlphabetPosition - key) % 26;
+            return (char) ('A' + newAlphabetPosition);
+        }
+        if((int) ch >= 97 && (int) ch <= 122) {
+            int originalAlphabetPosition = ch - 'a';
+            int newAlphabetPosition = (originalAlphabetPosition - key) % 26;
+            return (char) ('a' + newAlphabetPosition);
+        }
+        return ch;
     }
 
     public boolean isPathRight(String path) {
