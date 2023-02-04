@@ -12,12 +12,12 @@ import static consts.Const.encrypt;
 
 public class Main {
 
-    Scanner scanner = new Scanner(System.in);
+
     private void printCoco(int number) {
         System.out.printf("Coco %s%n" , number);
     }
-
-    Main() throws IOException {
+    Scanner scanner = new Scanner(System.in);
+    public void run() throws IOException {
         Validators validator = new Validators();
         FileManager fileManager = new FileManager();
         String type = validator.verifyIfEncryptOrDecrypt(scanner);
@@ -31,6 +31,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        Main a = new Main();
+        new Main().run();
     }
 }

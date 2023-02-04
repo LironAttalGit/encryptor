@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review" />
+    <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/enc.txt.encrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/enc.txt.encrypted.decrypted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

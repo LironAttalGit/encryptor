@@ -23,31 +23,30 @@ public class FileManager {
         return newFile;
     }
 
-    //TODO: The input does not match.
+    public void writeEncryptedDataToFile(File destFile , byte[] data) throws IOException {
+        OutputStream outputStream = new FileOutputStream(destFile);
+        outputStream.write(dataManipulation.encryptData( dataManipulation.generateRandomEncryptKey(),data));
+        outputStream.close();
+    }
+
+
     public void encryptToFile(File file) throws IOException {
-        byte[] key = dataManipulation.generateRandomEncryptKey();
         File destFile = createNewFile(file.getName().concat(".encrypted") , file.getParent());
         InputStream fileInputStream = new FileInputStream(file);
-        OutputStream outputStream = new FileOutputStream(destFile);
-        byte[] dataFromFile = fileInputStream.readAllBytes();
-        outputStream.write(dataManipulation.encryptData(dataFromFile , key));
+        writeEncryptedDataToFile(destFile , dataManipulation.getByte(fileInputStream));
         fileInputStream.close();
+    }
+
+    public void writeDecryptedDataToFile(File destFile , byte[] data , Scanner scanner) throws IOException {
+        OutputStream outputStream = new FileOutputStream(destFile);
+        outputStream.write(dataManipulation.decryptData(data , dataManipulation.keyInput(scanner)));
         outputStream.close();
     }
 
     public void decryptToFile(File file , Scanner scanner) throws IOException {
-        System.out.println("Enter the decryption key: ");
-        byte[] key = new byte[1];
-        key[0] = scanner.nextByte();
-        System.out.println("The key is : " + key[0]);
         File destFile = createNewFile(file.getName().concat(".decrypted") , file.getParent());
         InputStream inputStream = new FileInputStream(file);
-        OutputStream outputStream = new FileOutputStream(destFile);
-//        byte[] dataFromFile = inputStream.readAllBytes();
-//        outputStream.write(dataManipulation.decryptData(dataFromFile , key));
-        outputStream.write(dataManipulation.decryptData(inputStream.readAllBytes(),key));
-        //TODO: to check if above is ok by Aviv
+        writeDecryptedDataToFile(destFile , dataManipulation.getByte(inputStream) , scanner);
         inputStream.close();
-        outputStream.close();
     }
 }
