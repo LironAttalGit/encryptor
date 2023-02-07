@@ -1,34 +1,33 @@
 package validators;
 
+import userInput.UserInput;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
+
+import static consts.Const.DECRYPT;
+import static consts.Const.ENCRYPT;
 
 public class Validators {
-    public String verifyIfEncryptOrDecrypt(Scanner scanner) {
-        System.out.println("Please choose 1 for encrypt or  2 for decrypt:");
-        String type = scanner.nextLine();
-        do {
-            if(type.equals("1") || type.equals("2")) {
-                break;
-            }
+    UserInput userInput = new UserInput();
+
+    public int verifyAction() {
+        System.out.println("Please choose 1 for encrypt or  2 for decrypt");
+        int type = userInput.getIntInput();
+        while(type != ENCRYPT && type != DECRYPT) {
             System.out.println("Please choose 1 for encrypt or  2 for decrypt");
-            type = scanner.nextLine();
-        } while(! type.equals("1") || ! type.equals("2"));
+            type = userInput.getIntInput();
+        }
         return type;
     }
 
-    public String verifyIfPathValid(Scanner scanner) {
+    public String verifyIfPathValid() {
         System.out.println("Please enter the path:");
-        String path = scanner.next();
-        do {
-            if(isPathRight(path)) {
-                System.out.println("The path is valid");
-                break;
-            }
+        String path = userInput.getStringInput();
+        while(! isPathRight(path)) {
             System.out.println("error, path is not valid, enter path again:");
-            path = scanner.next();
-        } while(! isPathRight(path));
+            path = userInput.getStringInput();
+        }
         return path;
     }
 
