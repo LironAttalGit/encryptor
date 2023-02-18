@@ -5,20 +5,22 @@ import userInput.UserInput;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static consts.Const.DECRYPT;
-import static consts.Const.ENCRYPT;
+import static consts.Const.*;
 
 public class Validators {
     UserInput userInput = new UserInput();
 
-    public int verifyAction() {
-        System.out.println("Please choose 1 for encrypt or  2 for decrypt");
-        int type = userInput.getIntInput();
-        while(type != ENCRYPT && type != DECRYPT) {
-            System.out.println("Please choose 1 for encrypt or  2 for decrypt");
-            type = userInput.getIntInput();
+    public String verifyAction() {
+        System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
+        String inp = userInput.getScanner().nextLine();
+        while(! inp.equals("") || userInput.getScanner().hasNextLine()) {
+            if(inp.equals(ENCRYPT) || inp.equals(DECRYPT) || inp.equals(QUIT)) {
+                break;
+            }
+            System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
+            inp = userInput.getScanner().nextLine();
         }
-        return type;
+        return inp;
     }
 
     public String verifyIfPathValid() {

@@ -1,4 +1,4 @@
-package run;
+package encryptor;
 
 import fileManager.FileManager;
 import userInput.UserInput;
@@ -7,24 +7,26 @@ import validators.Validators;
 import java.io.File;
 import java.io.IOException;
 
-import static consts.Const.DECRYPT;
-import static consts.Const.ENCRYPT;
+import static consts.Const.*;
 
-public class Run {
+public class Encryptor {
 
     UserInput userInput = new UserInput();
 
     public void start() throws IOException {
-        Validators validator = new Validators();
-        FileManager fileManager = new FileManager();
+        System.out.println("starting encryptor");
 
-        int type = validator.verifyAction();
+        Validators validator = new Validators();
+        String type = validator.verifyAction();
+
+        FileManager fileManager = new FileManager();
         String path = validator.verifyIfPathValid();
 
         File file = new File(path);
         switch(type) {
             case ENCRYPT -> fileManager.encryptToFile(file);
             case DECRYPT -> fileManager.decryptToFile(file);
+            case QUIT -> System.out.println("Quiting");
         }
         userInput.closeScanner();
     }

@@ -1,13 +1,13 @@
 package main;
 
-import run.Run;
+import encryptor.Encryptor;
 
 import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Run run = new Run();
-        run.start();
+        Encryptor encryptor = new Encryptor();//todo: find a different name for RUN
+        encryptor.start();
     }
 }

@@ -19,10 +19,9 @@ public class UserInput {
         return scanner.nextLine();
     }
 
-    public int getIntInput() {
-        int input = scanner.nextInt();
-        scanner.nextLine();
-        return input;
+    public byte[] keyInput() {
+        System.out.println("Enter the decryption key: ");
+        return getByteInput();
     }
 
     public void closeScanner() {
