@@ -11,15 +11,11 @@ public class Validators {
     UserInput userInput = new UserInput();
 
     public String verifyAction() {
-        System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
-        String inp = userInput.getScanner().nextLine();
-        while(! inp.equals("") || userInput.getScanner().hasNextLine()) {
-            if(inp.equals(ENCRYPT) || inp.equals(DECRYPT) || inp.equals(QUIT)) {
-                break;
-            }
+        String inp;
+        do {
             System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
             inp = userInput.getScanner().nextLine();
-        }
+        } while(!(inp.equals(ENCRYPT) || inp.equals(DECRYPT) || inp.equals(QUIT)));
         return inp;
     }
 

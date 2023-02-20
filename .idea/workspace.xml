@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/consts/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consts/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/run/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/userInput/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/userInput/UserInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/validators/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validators.java" afterDir="false" />
     </list>
@@ -135,6 +133,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="after first code review" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/validators/Validators.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.io.FileInputStream" memberName="closeLock" />
