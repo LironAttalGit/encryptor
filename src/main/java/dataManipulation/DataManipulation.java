@@ -1,9 +1,13 @@
 package dataManipulation;
 
+import userInput.UserInput;
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class DataManipulation {
+    UserInput userInput = new UserInput();
+
     public byte encryptSingleByte(byte b , byte key) {
         return (byte) (b + key);
     }
@@ -14,7 +18,7 @@ public class DataManipulation {
 
     public byte[] generateRandomEncryptKey() {
         Random rand = new Random();
-        byte[] key = {};
+        byte[] key = new byte[1];
         rand.nextBytes(key);
         System.out.println("The random key is: " + Arrays.toString(key));
         return key;
@@ -34,5 +38,15 @@ public class DataManipulation {
             decData[i] = decryptSingleByte(data[i] , key[0]);
         }
         return decData;
+    }
+
+    public byte[] getEncData(byte[] data) {
+        byte[] key = generateRandomEncryptKey();
+        return encryptData(data , key);
+    }
+
+    public byte[] getDecData(byte[] data) {
+        byte[] key = userInput.keyInput();
+        return decryptData(data , key);
     }
 }
