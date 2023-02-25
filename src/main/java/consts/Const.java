@@ -1,7 +1,14 @@
 package consts;
 
+import java.util.HashMap;
+
 public class Const {
-    public static final String ENCRYPT = "1";
-    public static final String DECRYPT = "2";
-    public static final String QUIT = "3";
+
+    public static HashMap<String, String> options = new HashMap<>();
+
+    static {
+        options.put("1" , "ENCRYPT");
+        options.put("2" , "DECRYPT");
+        options.put("3" , "QUIT");
+    }
 }

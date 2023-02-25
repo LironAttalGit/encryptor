@@ -5,7 +5,7 @@ import userInput.UserInput;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static consts.Const.*;
+import static consts.Const.options;
 
 public class Validators {
     UserInput userInput = new UserInput();
@@ -13,9 +13,10 @@ public class Validators {
     public String verifyAction() {
         String inp;
         do {
-            System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
+            options.forEach((key , value) ->
+                    System.out.printf("Enter %s for %s\n" , value , key));
             inp = userInput.getScanner().nextLine();
-        } while(!(inp.equals(ENCRYPT) || inp.equals(DECRYPT) || inp.equals(QUIT)));
+        } while(! (options.containsKey(inp)));
         return inp;
     }
 
