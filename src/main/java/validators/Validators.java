@@ -1,26 +1,35 @@
 package validators;
 
+import consts.Const.options;
+
 import userInput.UserInput;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static consts.Const.*;
+import static consts.Const.options.*;
+
 
 public class Validators {
     UserInput userInput = new UserInput();
 
-    public String verifyAction() {
-        System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
-        String inp = userInput.getScanner().nextLine();
-        while(! inp.equals("") || userInput.getScanner().hasNextLine()) {
-            if(inp.equals(ENCRYPT) || inp.equals(DECRYPT) || inp.equals(QUIT)) {
-                break;
+    public options verifyAction(String inp) {
+        switch(inp) {
+            case "1" -> {
+                return ENCRYPT;
             }
-            System.out.println("Please enter 1 for encrypt or 2 for decrypt or 3 for quit");
-            inp = userInput.getScanner().nextLine();
+            case "2" -> {
+                return DECRYPT;
+            }
+            case "3" -> {
+                return QUIT;
+            }
+            default -> {
+                System.out.println("Enter 1 for Encrypt, 2 for Decrypt, 3 for Quit");
+                inp = userInput.getScanner().nextLine();
+                return verifyAction(inp);
+            }
         }
-        return inp;
     }
 
     public String verifyIfPathValid() {

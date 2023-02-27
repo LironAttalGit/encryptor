@@ -6,8 +6,8 @@ public class UserInput {
     Scanner scanner = new Scanner(System.in);
 
     public Scanner getScanner() {
-        return new Scanner(System.in);
-    }
+        return scanner;
+
 
     public byte[] getByteInput() {
         byte[] userByteInput = new byte[1];

@@ -2,7 +2,6 @@ package dataManipulation;
 
 import userInput.UserInput;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class DataManipulation {
@@ -20,7 +19,7 @@ public class DataManipulation {
         Random rand = new Random();
         byte[] key = new byte[1];
         rand.nextBytes(key);
-        System.out.println("The random key is: " + Arrays.toString(key));
+        System.out.format("The key is : %d\n" , key[0]); //Arrays.toString(key)
         return key;
     }
 

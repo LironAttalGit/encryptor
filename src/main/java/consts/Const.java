@@ -1,7 +1,20 @@
 package consts;
 
 public class Const {
-    public static final String ENCRYPT = "1";
-    public static final String DECRYPT = "2";
-    public static final String QUIT = "3";
+    public enum options {
+        ENCRYPT("1"),
+        DECRYPT("2"),
+        QUIT("3");
+
+        private final String option;
+
+        public String getOption() {
+            return option;
+        }
+
+        private options(String option) {
+            this.option = option;
+        }
+    }
+=======
 }
