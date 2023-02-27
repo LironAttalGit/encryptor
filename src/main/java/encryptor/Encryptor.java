@@ -1,6 +1,6 @@
 package encryptor;
 
-import consts.Const;
+import consts.Const.options;
 import dataManipulation.DataManipulation;
 import fileManager.FileManager;
 import userInput.UserInput;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 
-import static consts.Const.options;
+import static consts.Const.options.*;
 
 public class Encryptor {
     UserInput userInput = new UserInput();
@@ -23,16 +23,20 @@ public class Encryptor {
     public void start() {
         System.out.println("starting encryptor");
         Validators validator = new Validators();
-        String type = validator.verifyAction();
-        if(! type.equals(options.get("QUIT"))) {
-            String path = validator.verifyIfPathValid();
-            File file = new File(path);
-            switch(options.get(type)) {
-                case "ENCRYPT" -> encryptToFile(file);
-                case "DECRYPT" -> decryptToFile(file);
+        System.out.println("Enter 1 for Encrypt, 2 for Decrypt, 3 for Quit");
+        options type = validator.verifyAction(userInput.getScanner().nextLine());
+        switch(type) {
+            case ENCRYPT -> {
+                String path = validator.verifyIfPathValid();
+                File file = new File(path);
+                encryptToFile(file);
             }
-        } else {
-            System.out.println("Quiting");
+            case DECRYPT -> {
+                String path = validator.verifyIfPathValid();
+                File file = new File(path);
+                decryptToFile(file);
+            }
+            case QUIT -> System.out.println("Quiting");
         }
         userInput.closeScanner();
     }

@@ -1,14 +1,19 @@
 package consts;
 
-import java.util.HashMap;
-
 public class Const {
+    public enum options {
+        ENCRYPT("1"),
+        DECRYPT("2"),
+        QUIT("3");
 
-    public static HashMap<String, String> options = new HashMap<>();
+        private final String option;
 
-    static {
-        options.put("1" , "ENCRYPT");
-        options.put("2" , "DECRYPT");
-        options.put("3" , "QUIT");
+        public String getOption() {
+            return option;
+        }
+
+        private options(String option) {
+            this.option = option;
+        }
     }
 }

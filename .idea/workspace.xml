@@ -7,10 +7,7 @@
     <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/consts/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consts/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/validators/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validators.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +30,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="7cc22a48-e9af-404d-9270-a597e0ce7c4d" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7cc22a48-e9af-404d-9270-a597e0ce7c4d" />
+        <option name="url" value="https://github.com/LironAttalGit/encryptor" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
