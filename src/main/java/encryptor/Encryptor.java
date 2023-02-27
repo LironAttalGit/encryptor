@@ -40,7 +40,7 @@ public class Encryptor {
         }
         userInput.closeScanner();
     }
-
+  
     public void encryptToFile(File file) {
         try {
             File destFile = fileManager.createNewFile(file.getName().concat(".encrypted") , file.getParent());
@@ -63,3 +63,4 @@ public class Encryptor {
         }
     }
 }
+

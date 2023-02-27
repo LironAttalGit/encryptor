@@ -15,6 +15,4 @@ public class FileManager {
         System.out.println("Writing data to file");
         Files.write(destFile.toPath() , dataToWrite);
     }
-
-
 }

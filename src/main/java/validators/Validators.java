@@ -1,12 +1,14 @@
 package validators;
 
 import consts.Const.options;
+
 import userInput.UserInput;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static consts.Const.options.*;
+
 
 public class Validators {
     UserInput userInput = new UserInput();
