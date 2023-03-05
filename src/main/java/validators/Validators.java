@@ -43,7 +43,7 @@ public class Validators {
             case "3" -> {
                 return MULTIPLICATION;
             }
-            case "4" ->{
+            case "4" -> {
                 return REVERSE;
             }
             default -> {

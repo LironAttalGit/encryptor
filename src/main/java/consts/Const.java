@@ -33,5 +33,4 @@ public class Const {
             this.encryptionOption = option;
         }
     }
-
 }
