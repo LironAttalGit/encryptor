@@ -10,10 +10,12 @@ import static consts.Const.encryptionOptions;
 import static consts.Const.encryptionOptions.*;
 import static consts.Const.menuOptions.*;
 
+
 public class Validators {
     UserInput userInput = new UserInput();
 
     public menuOptions verifyAction(String inp) {
+
         switch(inp) {
             case "1" -> {
                 return ENCRYPT;
@@ -66,6 +68,7 @@ public class Validators {
                 System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Reverse");
                 inp = userInput.getScanner().nextLine();
                 return verifyEncryptDecryptAlgorithm(inp);
+
             }
         }
     }
