@@ -1,13 +1,12 @@
 package validators;
 
+import algorithms.*;
 import consts.Const.menuOptions;
 import userInput.UserInput;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static consts.Const.encryptionOptions;
-import static consts.Const.encryptionOptions.*;
 import static consts.Const.menuOptions.*;
 
 public class Validators {
@@ -32,40 +31,26 @@ public class Validators {
         }
     }
 
-    public encryptionOptions verifyEncryptDecryptAlgorithm(String inp) {
+    public IAlgorithm verifyAlgorithm(String inp) {
         switch(inp) {
             case "1" -> {
-                return CAESAR;
+                return new Caesar();
             }
             case "2" -> {
-                return XOR;
+                return new Xor();
             }
             case "3" -> {
-                return MULTIPLICATION;
+                return new Multiplication();
             }
             case "4" -> {
-                return REVERSE;
+                System.out.println("Choose an encryption algorithm.");
+                System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
+                return new Reverse(verifyAlgorithm(userInput.getStringInput()));
             }
             default -> {
-                System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Reverse");
-                inp = userInput.getScanner().nextLine();
-                return verifyEncryptDecryptAlgorithm(inp);
-            }
-        }
-    }
-
-    public encryptionOptions verifyReverseTypeAlgorithm(String inp) {
-        switch(inp) {
-            case "1" -> {
-                return CAESAR;
-            }
-            case "2" -> {
-                return XOR;
-            }
-            default -> {
-                System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Reverse");
-                inp = userInput.getScanner().nextLine();
-                return verifyEncryptDecryptAlgorithm(inp);
+                System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication,4 for Reverse");
+                inp = userInput.getStringInput();
+                return verifyAlgorithm(inp);
             }
         }
     }
@@ -73,7 +58,7 @@ public class Validators {
     public String verifyIfPathValid() {
         System.out.println("Please enter the path:");
         String path = userInput.getStringInput();
-        while(! isPathRight(path)) {
+        while(! isPathRight(path) || path.equals("\n")) {
             System.out.println("error, path is not valid, enter path again:");
             path = userInput.getStringInput();
         }

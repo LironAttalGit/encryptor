@@ -1,6 +1,5 @@
 package encryptor;
 
-import consts.Const.encryptionOptions;
 import consts.Const.menuOptions;
 import dataManipulation.DataManipulation;
 import fileManager.FileManager;
@@ -45,11 +44,10 @@ public class Encryptor {
 
     public void encryptToFile(File file) {
         try {
+            File destFile = fileManager.createNewFile(file.getName().concat(".encrypted") , file.getParent());
             System.out.println("Choose an encryption algorithm.");
             System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
-            encryptionOptions algorithmType = validator.verifyEncryptDecryptAlgorithm(userInput.getScanner().nextLine());
-            File destFile = fileManager.createNewFile(file.getName().concat(".encrypted") , file.getParent());
-            byte[] data = dataManipulation.getEncData(Files.readAllBytes(file.toPath()) , algorithmType);
+            byte[] data = dataManipulation.getEncData(Files.readAllBytes(file.toPath()));
             fileManager.writeDataToFile(destFile , data);
         } catch(IOException io) {
             System.out.println("There was a problem with the files");
@@ -61,9 +59,8 @@ public class Encryptor {
             File destFile = fileManager.createNewFile(file.getName().concat(".decrypted") , file.getParent());
             System.out.println("Choose an decryption algorithm.");
             System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
-            encryptionOptions algorithmType = validator.verifyEncryptDecryptAlgorithm(userInput.getScanner().nextLine());
             InputStream inputStream = new FileInputStream(file);
-            byte[] data = dataManipulation.getDecData(inputStream.readAllBytes() , algorithmType);
+            byte[] data = dataManipulation.getDecData(inputStream.readAllBytes());
             fileManager.writeDataToFile(destFile , data);
             inputStream.close();
         } catch(IOException io) {
