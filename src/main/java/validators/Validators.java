@@ -25,13 +25,14 @@ public class Validators {
             }
             default -> {
                 System.out.println("Enter 1 for Encrypt, 2 for Decrypt, 3 for Quit");
-                inp = userInput.getScanner().nextLine();
+                inp = userInput.getStringInput();
                 return verifyAction(inp);
             }
         }
     }
 
     public IAlgorithm verifyAlgorithm(String inp) {
+        System.out.println("Choose an encryption algorithm\nEnter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
         switch(inp) {
             case "1" -> {
                 return new Caesar();
@@ -43,8 +44,6 @@ public class Validators {
                 return new Multiplication();
             }
             case "4" -> {
-                System.out.println("Choose an encryption algorithm.");
-                System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
                 return new Reverse(verifyAlgorithm(userInput.getStringInput()));
             }
             default -> {

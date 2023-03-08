@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/validators/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validators.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,20 +157,6 @@
           <properties class="java.lang.ArithmeticException" package="java.lang" />
           <option name="timeStamp" value="15" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/validators/Validators.java</url>
-          <line>33</line>
-          <properties class="validators.Validators" method="verifyAlgorithm">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

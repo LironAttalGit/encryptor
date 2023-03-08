@@ -5,7 +5,7 @@ public class Reverse implements IAlgorithm {
     private final IAlgorithm algorithm;
 
     public Reverse(IAlgorithm algo) {
-        algorithm = algo;
+        this.algorithm = algo;
     }
 
     @Override

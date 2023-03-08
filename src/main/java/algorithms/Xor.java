@@ -9,7 +9,7 @@ public class Xor implements IAlgorithm {
     @Override
     public byte decrypt(byte b , byte key) {
         if(key % 2 == 0) {
-            throw new RuntimeException("Key value is ");
+            throw new RuntimeException("Key value is invalid");
         }
         return (byte) (b ^ key);
     }
