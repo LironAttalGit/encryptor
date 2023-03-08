@@ -40,9 +40,9 @@ public class Encryptor {
     public void encryptToFile(File file) {
         try {
             File destFile = fileManager.createNewFile(file.getName().concat(".encrypted") , file.getParent());
-            IAlgorithm algo = validator.verifyAlgorithm(userInput.getStringInput());
+            IAlgorithm algorithm = validator.verifyAlgorithm(userInput.getStringInput());
             byte[] key = dataManipulation.generateRandomEncryptKey();
-            byte[] data = dataManipulation.getEncData(Files.readAllBytes(file.toPath()) , algo , key);
+            byte[] data = dataManipulation.getEncData(Files.readAllBytes(file.toPath()) , algorithm , key);
             fileManager.writeDataToFile(destFile , data);
         } catch(IOException io) {
             System.out.println("There was a problem with the files");
@@ -54,9 +54,9 @@ public class Encryptor {
             File destFile = fileManager.createNewFile(file.getName().concat(".decrypted") , file.getParent());
             System.out.println("Choose an decryption algorithm.");
             System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
-            IAlgorithm algo = validator.verifyAlgorithm(userInput.getStringInput());
+            IAlgorithm algorithm = validator.verifyAlgorithm(userInput.getStringInput());
             byte[] key = userInput.keyInput();
-            byte[] data = dataManipulation.getDecData(Files.readAllBytes(file.toPath()) , algo , key);
+            byte[] data = dataManipulation.getDecData(Files.readAllBytes(file.toPath()) , algorithm , key);
             fileManager.writeDataToFile(destFile , data);
         } catch(IOException io) {
             System.out.println("There was a problem with the files");

@@ -14,18 +14,18 @@ public class DataManipulation {
         return key;
     }
 
-    public byte[] getEncData(byte[] data , IAlgorithm algo , byte[] key) {
+    public byte[] getEncData(byte[] data , IAlgorithm algorithm , byte[] key) {
         byte[] encData = new byte[data.length];
         for(int i = 0 ; i < data.length ; i++) {
-            encData[i] = algo.encrypt(data[i] , key[0]);
+            encData[i] = algorithm.encrypt(data[i] , key[0]);
         }
         return encData;
     }
 
-    public byte[] getDecData(byte[] data , IAlgorithm algo , byte[] key) {
+    public byte[] getDecData(byte[] data , IAlgorithm algorithm , byte[] key) {
         byte[] decData = new byte[data.length];
         for(int i = 0 ; i < data.length ; i++) {
-            decData[i] = algo.decrypt(data[i] , key[0]);
+            decData[i] = algorithm.decrypt(data[i] , key[0]);
         }
         return decData;
     }
