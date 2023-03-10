@@ -17,4 +17,9 @@ public class Reverse implements IAlgorithm {
     public byte decrypt(byte b , byte key) {
         return algorithm.encrypt(b , key);
     }
+
+    @Override
+    public byte[] generateRandomEncryptKey() {
+        return algorithm.generateRandomEncryptKey();
+    }
 }

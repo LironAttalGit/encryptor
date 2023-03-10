@@ -1,5 +1,7 @@
 package algorithms;
 
+import java.util.Random;
+
 public class Multiplication implements IAlgorithm {
 
     @Override
@@ -23,4 +25,15 @@ public class Multiplication implements IAlgorithm {
         }
         return keyDec;
     }
+
+    public byte[] generateRandomEncryptKey() {
+        Random rand = new Random();
+        byte[] key = new byte[1];
+        do {
+            rand.nextBytes(key);
+        } while(key[0] % 2 == 0);
+        System.out.format("The key is : %d\n" , key[0]);
+        return key;
+    }
+
 }

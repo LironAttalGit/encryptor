@@ -12,7 +12,9 @@ import static consts.Const.menuOptions.*;
 public class Validators {
     UserInput userInput = new UserInput();
 
-    public menuOptions verifyAction(String inp) {
+    public menuOptions verifyAction() {
+        System.out.println("Enter 1 for Encrypt, 2 for Decrypt, 3 for Quit");
+        String inp = userInput.getStringInput();
         switch(inp) {
             case "1" -> {
                 return ENCRYPT;
@@ -24,15 +26,13 @@ public class Validators {
                 return QUIT;
             }
             default -> {
-                System.out.println("Enter 1 for Encrypt, 2 for Decrypt, 3 for Quit");
-                inp = userInput.getStringInput();
-                return verifyAction(inp);
+                return verifyAction();
             }
         }
     }
 
     public IAlgorithm verifyAlgorithm(String inp) {
-        System.out.println("Choose an encryption algorithm\nEnter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
+        System.out.println("Choose an algorithm\nEnter 1 for Caesar, 2 for Xor, 3 for Multiplication, 4 for Reverse");
         switch(inp) {
             case "1" -> {
                 return new Caesar();
@@ -47,13 +47,12 @@ public class Validators {
                 return new Reverse(verifyAlgorithm(userInput.getStringInput()));
             }
             default -> {
-                System.out.println("Enter 1 for Caesar, 2 for Xor, 3 for Multiplication,4 for Reverse");
                 inp = userInput.getStringInput();
                 return verifyAlgorithm(inp);
             }
         }
     }
-//review
+
     public String verifyIfPathValid() {
         System.out.println("Please enter the path:");
         String path = userInput.getStringInput();
