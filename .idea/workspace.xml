@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/consts/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consts/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/validators/Validators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validators/Validators.java" afterDir="false" />
     </list>
@@ -19,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -30,11 +36,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="7cc22a48-e9af-404d-9270-a597e0ce7c4d" />
   </component>
@@ -123,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674748477250</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="after first code review">
+      <created>1678292763779</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678292763779</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +157,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="after first code review" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArithmeticException" package="java.lang" />
+          <option name="timeStamp" value="15" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.io.FileInputStream" memberName="closeLock" />
@@ -155,5 +176,10 @@
         <watch expression="dataManipulation.replaceCharWithKeyEncrypt(ch , key[0])" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/encryptor$Main.ic" NAME="Main Coverage Results" MODIFIED="1677932895893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
   </component>
 </project>

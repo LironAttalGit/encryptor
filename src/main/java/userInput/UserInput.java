@@ -7,7 +7,7 @@ public class UserInput {
 
     public Scanner getScanner() {
         return scanner;
-
+    }
 
     public byte[] getByteInput() {
         byte[] userByteInput = new byte[1];

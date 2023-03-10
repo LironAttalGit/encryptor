@@ -1,20 +1,36 @@
 package consts;
 
 public class Const {
-    public enum options {
+    public enum menuOptions {
         ENCRYPT("1"),
         DECRYPT("2"),
         QUIT("3");
 
-        private final String option;
+        private final String menuOption;
 
-        public String getOption() {
-            return option;
+        public String getMenuOption() {
+            return menuOption;
         }
 
-        private options(String option) {
-            this.option = option;
+        private menuOptions(String option) {
+            this.menuOption = option;
         }
     }
-=======
+
+    public enum encryptionOptions {
+        CAESAR("1"),
+        XOR("2"),
+        MULTIPLICATION("3"),
+        REVERSE("4");
+
+        private final String encryptionOption;
+
+        public String getEncryptionOption() {
+            return encryptionOption;
+        }
+
+        private encryptionOptions(String option) {
+            this.encryptionOption = option;
+        }
+    }
 }
