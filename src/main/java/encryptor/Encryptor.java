@@ -30,9 +30,10 @@ public class Encryptor {
                 encryptToFile(file , algorithm , key);
             }
             case DECRYPT -> {
-                byte[] key = userInput.keyInput();
+                String pathOfKey = validator.verifyIfPathValid();
+
                 System.out.println("decryption start");
-                decryptToFile(file , algorithm , key);
+                decryptToFile(file , algorithm , pathOfKey);
             }
             case QUIT -> System.out.println("Quiting");
         }
@@ -49,7 +50,7 @@ public class Encryptor {
         }
     }
 
-    public void decryptToFile(File file , IAlgorithm algorithm , byte[] key) {
+    public void decryptToFile(File file , IAlgorithm algorithm , String pathOfKey) {
         try {
             File destFile = fileManager.createNewFile(file.getName().concat(".decrypted") , file.getParent());
             byte[] data = dataManipulation.decryptData(Files.readAllBytes(file.toPath()) , algorithm , key);

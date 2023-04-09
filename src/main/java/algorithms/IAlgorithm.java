@@ -1,5 +1,6 @@
 package algorithms;
 
+import java.io.IOException;
 import java.util.Random;
 
 public interface IAlgorithm {
@@ -7,5 +8,5 @@ public interface IAlgorithm {
 
     byte decrypt(byte b , byte key);
 
-    public byte[] generateRandomEncryptKey() ;
+    public byte[] generateRandomEncryptKey();
 }

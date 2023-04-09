@@ -21,7 +21,8 @@ public class Const {
         CAESAR("1"),
         XOR("2"),
         MULTIPLICATION("3"),
-        REVERSE("4");
+        REVERSE("4"),
+        DOUBLE("5");
 
         private final String encryptionOption;
 
