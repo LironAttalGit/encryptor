@@ -1,6 +1,7 @@
 package encryptor;
 
-import algorithms.IAlgorithm;
+import algorithms.*;
+import algorithms.Double;
 import consts.Const.menuOptions;
 import dataManipulation.DataManipulation;
 import fileManager.FileManager;
@@ -20,42 +21,49 @@ public class Encryptor {
     public void start() {
         System.out.println("starting encryptor");
         menuOptions type = validator.verifyAction();
-        IAlgorithm algorithm = validator.verifyAlgorithm(userInput.getStringInput());
         String path = validator.verifyIfPathValid();
         File file = new File(path);
-        switch(type) {
+
+        switch (type) {
             case ENCRYPT -> {
-                byte[] key = algorithm.generateRandomEncryptKey();
+                IAlgorithm caesar = new Caesar();
+                IAlgorithm xor = new Xor();
+                IAlgorithm multiplication = new Multiplication();
+
+                IAlgorithm doubleEnc = new Double(caesar, multiplication);
+                IAlgorithm reverse = new Reverse(doubleEnc);
+                IAlgorithm doubleEnc1 = new Double(xor, reverse);
                 System.out.println("encryption start");
-                encryptToFile(file , algorithm , key);
+                encryptToFile(file,doubleEnc1);
             }
             case DECRYPT -> {
-                String pathOfKey = validator.verifyIfPathValid();
-
+                IAlgorithm caesar = new Caesar("caesar_key.bin");
+                IAlgorithm xor = new Xor();
+                IAlgorithm multiplication = new Multiplication();
                 System.out.println("decryption start");
-                decryptToFile(file , algorithm , pathOfKey);
+                decryptToFile(file, algorithm);
             }
             case QUIT -> System.out.println("Quiting");
         }
         userInput.closeScanner();
     }
 
-    public void encryptToFile(File file , IAlgorithm algorithm , byte[] key) {
+    public void encryptToFile(File file, IAlgorithm algorithm) {
         try {
-            File destFile = fileManager.createNewFile(file.getName().concat(".encrypted") , file.getParent());
-            byte[] data = dataManipulation.encryptData(Files.readAllBytes(file.toPath()) , algorithm , key);
-            fileManager.writeDataToFile(destFile , data);
-        } catch(IOException io) {
+            File destFile = fileManager.createNewFile(file.getName().concat(".encrypted"), file.getParent());
+            byte[] data = dataManipulation.encryptData(Files.readAllBytes(file.toPath()), algorithm);
+            fileManager.writeDataToFile(destFile, data);
+        } catch (IOException io) {
             System.out.println("There was a problem with the files");
         }
     }
 
-    public void decryptToFile(File file , IAlgorithm algorithm , String pathOfKey) {
+    public void decryptToFile(File file, IAlgorithm algorithm) {
         try {
-            File destFile = fileManager.createNewFile(file.getName().concat(".decrypted") , file.getParent());
-            byte[] data = dataManipulation.decryptData(Files.readAllBytes(file.toPath()) , algorithm , key);
-            fileManager.writeDataToFile(destFile , data);
-        } catch(IOException io) {
+            File destFile = fileManager.createNewFile(file.getName().concat(".decrypted"), file.getParent());
+            byte[] data = dataManipulation.decryptData(Files.readAllBytes(file.toPath()), algorithm);
+            fileManager.writeDataToFile(destFile, data);
+        } catch (IOException io) {
             System.out.println("There was a problem with the files");
         }
     }

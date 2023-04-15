@@ -10,25 +10,35 @@ import java.util.Random;
 public class Xor implements IAlgorithm {
     FileManager fileManager = new FileManager();
 
-    @Override
-    public byte encrypt(byte b , byte key) {
-        return (byte) (b ^ key);
+    byte[] key;
+
+    public Xor() {
+        this.key = fileManager.readDataFromFile(generateRandomEncryptKey().getPath());
+    }
+
+    public Xor(File keyFile) {
+        this.key = fileManager.readDataFromFile(keyFile.getPath());
     }
 
     @Override
-    public byte decrypt(byte b , byte key) {
-        if(key % 2 == 0) {
+    public byte encrypt(byte b) {
+        return (byte) (b ^ key[0]);
+    }
+
+    @Override
+    public byte decrypt(byte b) {
+        if (key[0] % 2 == 0) {
             throw new RuntimeException("Key value is invalid");
         }
-        return (byte) (b ^ key);
+        return (byte) (b ^ key[0]);
     }
 
-    public byte[] generateRandomEncryptKey() {
-        File keyFile = fileManager.createNewFile("key.bin" , "G:\\encryptor\\Files");
+    public File generateRandomEncryptKey() {
+        File keyFile = fileManager.createNewFile("xor_key.bin", "G:\\encryptor\\Files");
         Random rand = new Random();
         byte[] key = new byte[1];
         rand.nextBytes(key);
-        fileManager.writeDataToFile(keyFile , key);
-        return key;
+        fileManager.writeDataToFile(keyFile, key);
+        return keyFile;
     }
 }

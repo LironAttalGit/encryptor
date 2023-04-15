@@ -1,5 +1,7 @@
 package algorithms;
 
+import java.io.File;
+
 public class Reverse implements IAlgorithm {
 
     private final IAlgorithm algorithm;
@@ -9,17 +11,17 @@ public class Reverse implements IAlgorithm {
     }
 
     @Override
-    public byte encrypt(byte b , byte key) {
-        return algorithm.decrypt(b , key);
+    public byte encrypt(byte b) {
+        return algorithm.decrypt(b);
     }
 
     @Override
-    public byte decrypt(byte b , byte key) {
-        return algorithm.encrypt(b , key);
+    public byte decrypt(byte b) {
+        return algorithm.encrypt(b);
     }
 
     @Override
-    public byte[] generateRandomEncryptKey() {
-        return algorithm.generateRandomEncryptKey();
+    public File generateRandomEncryptKey() {
+        return algorithm.generateRandomEncryptKey(); //TODO:fix this
     }
 }

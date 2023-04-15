@@ -1,12 +1,11 @@
 package algorithms;
 
-import java.io.IOException;
-import java.util.Random;
+import java.io.File;
 
 public interface IAlgorithm {
-    byte encrypt(byte b , byte key);
+    byte encrypt(byte b);
 
-    byte decrypt(byte b , byte key);
+    byte decrypt(byte b);
 
-    public byte[] generateRandomEncryptKey();
+    public File generateRandomEncryptKey();
 }
