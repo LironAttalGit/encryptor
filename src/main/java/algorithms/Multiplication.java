@@ -11,12 +11,12 @@ public class Multiplication implements IAlgorithm {
     byte[] key;
 
     public Multiplication() {
-        this.key = fileManager.readDataFromFile(generateRandomEncryptKey().getPath());
+//        this.key = fileManager.readDataFromFile(generateRandomEncryptKey().getPath());
     }
 
-    public Multiplication(File keyFile) {
-        this.key = fileManager.readDataFromFile(keyFile.getPath());
-    }
+//    public Multiplication(File keyFile) {
+//        this.key = fileManager.readDataFromFile(keyFile.getPath());
+//    }
 
     @Override
     public byte encrypt(byte b) {
@@ -41,7 +41,7 @@ public class Multiplication implements IAlgorithm {
     }
 
     public File generateRandomEncryptKey() {
-        File keyFile = fileManager.createNewFile("mul_key.bin", "G:\\encryptor\\Files");
+        File keyFile = fileManager.createNewFile("key.bin", "G:\\encryptor\\Files");
         Random rand = new Random();
         byte[] key = new byte[1];
         do {

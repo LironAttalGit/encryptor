@@ -13,12 +13,12 @@ public class Xor implements IAlgorithm {
     byte[] key;
 
     public Xor() {
-        this.key = fileManager.readDataFromFile(generateRandomEncryptKey().getPath());
+//        this.key = fileManager.readDataFromFile(generateRandomEncryptKey().getPath());
     }
 
-    public Xor(File keyFile) {
-        this.key = fileManager.readDataFromFile(keyFile.getPath());
-    }
+//    public Xor(File keyFile) {
+//        this.key = fileManager.readDataFromFile(keyFile.getPath());
+//    }
 
     @Override
     public byte encrypt(byte b) {
@@ -34,7 +34,7 @@ public class Xor implements IAlgorithm {
     }
 
     public File generateRandomEncryptKey() {
-        File keyFile = fileManager.createNewFile("xor_key.bin", "G:\\encryptor\\Files");
+        File keyFile = fileManager.createNewFile("key.bin", "G:\\encryptor\\Files");
         Random rand = new Random();
         byte[] key = new byte[1];
         rand.nextBytes(key);

@@ -13,21 +13,22 @@ public class Double implements IAlgorithm {
     byte[] firstKey;
     byte[] secondKey;
 
-    public Double(IAlgorithm first, IAlgorithm second) {
+    public Double(IAlgorithm first , IAlgorithm second) {
         this.first = first;
-        this.firstKey = fileManager.readDataFromFile(first.generateRandomEncryptKey().getPath());
-        this.second = second;
-        this.secondKey = fileManager.readDataFromFile(second.generateRandomEncryptKey().getPath());
+//        this.firstKey = fileManager.readDataFromFile(first.generateRandomEncryptKey().getPath());
+//        this.second = second;
+//        this.secondKey = fileManager.readDataFromFile(second.generateRandomEncryptKey().getPath());
     }
 
     @Override
     public byte encrypt(byte b) {
-        byte b1 = first.encrypt(b, firstKey[0]);
-        return second.encrypt(b1, secondKey[0]);
+//        byte b1 = first.encrypt(b, firstKey[0]);
+//        return second.encrypt(b1, secondKey[0]);
+        return 0;
     }
 
     @Override
-    public byte decrypt(byte b, byte key) {
+    public byte decrypt(byte b) {
         return 0;
     }
 

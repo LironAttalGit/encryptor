@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Double.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Double.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" afterDir="false" />
     </list>
@@ -54,6 +51,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../jdk_18/lib/src.zip!/java.base/java/io/File.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -61,6 +61,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="$PROJECT_DIR$/../maven/apache-maven-3.8.5" />
+        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -74,11 +75,13 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FirstExercise&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;G:/encryptor/Files&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -138,8 +141,18 @@
       <option name="project" value="LOCAL" />
       <updated>1678292763779</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="after first code review">
+      <created>1681034973830</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681034973830</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bin" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -165,10 +178,35 @@
           <properties class="java.lang.ArithmeticException" package="java.lang" />
           <option name="timeStamp" value="15" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="26" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fileManager/FileManager.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="java.util.Scanner" memberName="source" />
         <PinnedItemInfo parentTag="java.io.FileInputStream" memberName="closeLock" />
       </pinned-members>
     </pin-to-top-manager>
