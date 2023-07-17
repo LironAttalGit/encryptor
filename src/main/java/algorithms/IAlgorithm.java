@@ -11,5 +11,5 @@ public interface IAlgorithm {
 
     byte decrypt(byte b);
 
-    public File generateRandomEncryptKey(File key);
+    File generateRandomEncryptKey(File key);
 }

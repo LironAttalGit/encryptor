@@ -37,8 +37,7 @@ public class Encryptor {
 //                IAlgorithm reverse = new Reverse(doubleEnc);
 //                IAlgorithm doubleEnc1 = new Double(xor, reverse);
                 System.out.println("encryption start");
-                for(int i = 0; i< algorithms.length;i++)
-                    algorithms[i].generateRandomEncryptKey(keyBin);
+                for(IAlgorithm algorithm : algorithms) algorithm.generateRandomEncryptKey(keyBin);
 //                caesar.generateRandomEncryptKey(keyBin);
 //                xor.generateRandomEncryptKey(keyBin);
 
@@ -49,7 +48,7 @@ public class Encryptor {
 //                IAlgorithm caesar = new Caesar();
                 byte[] keyBin = fileManager.readDataFromFile(new File("G:\\encryptor\\Files\\key.bin"));
                 System.out.println("decryption start");
-                decryptToFile(file , keyBin ,algorithms );
+                decryptToFile(file , keyBin , algorithms);
 //                IAlgorithm caesar = new Caesar();
 //                IAlgorithm xor = new Xor();
 //                IAlgorithm multiplication = new Multiplication();
