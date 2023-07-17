@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6369740b-adb8-4922-9779-6b83e55cdfde" name="Changes" comment="after first code review">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Caesar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Double.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Double.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/IAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Multiplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Reverse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/Xor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataManipulation/DataManipulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fileManager/FileManager.java" afterDir="false" />
     </list>
@@ -71,19 +73,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;FirstExercise&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/encryptor/Files&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "FirstExercise",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "G:/encryptor/Files",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\encryptor\Files" />
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681034973830</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="after first code review">
+      <created>1686072050571</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686072050571</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -184,23 +193,22 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="29" />
+          <line>49</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/fileManager/FileManager.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/encryptor/Encryptor.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="36" />
+          <line>32</line>
+          <properties class="fileManager.FileManager" method="readDataFromFile">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

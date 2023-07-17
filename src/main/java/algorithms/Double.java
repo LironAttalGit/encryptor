@@ -21,9 +21,19 @@ public class Double implements IAlgorithm {
     }
 
     @Override
-    public byte encrypt(byte b) {
+    public byte encrypt(byte key , byte b) {
 //        byte b1 = first.encrypt(b, firstKey[0]);
 //        return second.encrypt(b1, secondKey[0]);
+        return 0;
+    }
+
+    @Override
+    public byte encrypt(byte b) {
+        return 0;
+    }
+
+    @Override
+    public byte decrypt(byte key , byte b) {
         return 0;
     }
 
@@ -33,7 +43,7 @@ public class Double implements IAlgorithm {
     }
 
     @Override
-    public File generateRandomEncryptKey() {
+    public File generateRandomEncryptKey(File keyFile) {
         return null;
     }//TODO: do this
 }

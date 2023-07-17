@@ -11,17 +11,27 @@ public class Reverse implements IAlgorithm {
     }
 
     @Override
+    public byte encrypt(byte key , byte b) {
+        return 0;
+    }
+
+    @Override
     public byte encrypt(byte b) {
         return algorithm.decrypt(b);
     }
 
     @Override
-    public byte decrypt(byte b) {
-        return algorithm.encrypt(b);
+    public byte decrypt(byte key , byte b) {
+        return algorithm.encrypt(key , b);
     }
 
     @Override
-    public File generateRandomEncryptKey() {
-        return algorithm.generateRandomEncryptKey(); //TODO:fix this
+    public byte decrypt(byte b) {
+        return 0;
+    }
+
+    @Override
+    public File generateRandomEncryptKey(File keyFile) {
+        return algorithm.generateRandomEncryptKey(keyFile); //TODO:fix this
     }
 }

@@ -13,11 +13,20 @@ public class FileManager {
     }
 
     public void writeDataToFile(File destFile , byte[] dataToWrite) {
+        OutputStream stream = null;
         try {
             System.out.println("Writing data to file");
-            Files.write(destFile.toPath(),dataToWrite);
+            stream = new FileOutputStream(destFile , true);
+            stream.write(dataToWrite , 0 , dataToWrite.length);
         } catch(IOException e) {
             System.out.println("write operation was not successful");
+        } finally {
+            try {
+                assert stream != null;
+                stream.close();
+            } catch(IOException e) {
+                System.out.println("close operation was not successful");
+            }
         }
     }
 

@@ -5,21 +5,21 @@ import fileManager.FileManager;
 
 public class DataManipulation {
 
-    FileManager fileManager = new FileManager();
-
-    public byte[] encryptData(byte[] data, IAlgorithm algorithm) { //change name
-        byte[] encData = new byte[data.length];
-        for (int i = 0; i < data.length; i++) {
-            encData[i] = algorithm.encrypt(data[i]);
+    public byte[] encryptData(byte[] data , byte[] key , IAlgorithm[] algorithm) { //change name
+        for(int j = 0 ; j < key.length ; j++) {
+            for(int i = 0 ; i < data.length ; i++) {
+                data[i] = algorithm[j].encrypt(key[j] , data[i]);
+            }
         }
-        return encData;
+        return data;
     }
 
-    public byte[] decryptData(byte[] data, IAlgorithm algorithm) {// change name
-        byte[] decData = new byte[data.length];
-        for (int i = 0; i < data.length; i++) {
-            decData[i] = algorithm.decrypt(data[i]);
+    public byte[] decryptData(byte[] data , byte[] key , IAlgorithm[] algorithm) {// change name
+        for(int j = algorithm.length ; j > 0 ; j--) {
+            for(int i = 0 ; i < data.length ; i++) {
+                data[i] = algorithm[j - 1].decrypt(key[j - 1] , data[i]);
+            }
         }
-        return decData;
+        return data;
     }
 }

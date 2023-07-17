@@ -3,32 +3,35 @@ package algorithms;
 import fileManager.FileManager;
 
 import java.io.File;
-import java.nio.file.Path;
 import java.util.Random;
 
 public class Caesar implements IAlgorithm {
 
     public Caesar() {
+
     }
 
     FileManager fileManager = new FileManager();
 
-    File keyFile = new File("G:\\encryptor\\Files\\key.bin");
+    public byte encrypt(byte key , byte b) {
+        return (byte) (b + key);
+    }
 
-    byte[] key;
-
+    @Override
     public byte encrypt(byte b) {
-        key = fileManager.readDataFromFile(keyFile);
-        return (byte) (b + key[0]);
+        return 0;
     }
 
+    public byte decrypt(byte key , byte b) {
+        return (byte) (b - key);
+    }
+
+    @Override
     public byte decrypt(byte b) {
-        key = fileManager.readDataFromFile(keyFile);
-        return (byte) (b - key[0]);
+        return 0;
     }
 
-    public File generateRandomEncryptKey() {
-        File keyFile = fileManager.createNewFile("key.bin" , "G:\\encryptor\\Files");
+    public File generateRandomEncryptKey(File keyFile) {
         Random rand = new Random();
         byte[] key = new byte[1];
         rand.nextBytes(key);
